@@ -15,7 +15,7 @@
   right: 0;
 }
 
-.batt {
+.batt-body {
   position: fixed;
   top: 50%;
   left: 20px;
@@ -25,7 +25,6 @@
 
   border: 2px solid black;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .batt-top {
@@ -41,14 +40,68 @@
   border-top-right-radius: 5px;
 }
 
+.batt {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  height: 250px;
+  margin-top: -125px;
+
+  display: flex;
+  align-items: flex-end;
+  border: 2px solid rgba(0,0,0,0);
+}
+
 .batt-bar {
   background-color: darkorange;
-  height: 20px;
-  margin-top: 5px;
+  width: 0;
+  height: 0;
+  margin-bottom: 5px;
   transition-delay: 3s;
 }
 
 .batt-bar:hover {
   transition-delay: 0s;
+  width: 80px;
+  height: 20px;
+  margin-right: 10000px;
+}
+
+.batt-bar .handle {
+  position: fixed;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+
+  background-color: blue;
+  transition-delay: 3s;
+}
+
+.batt-bar .handle:hover {
+  transition-delay: 0s;
   height: 0;
+}
+
+.batt-bar:nth-child(1) .handle { left: 20%; }
+.batt-bar:nth-child(2) .handle { left: 25%; }
+.batt-bar:nth-child(3) .handle { left: 30%; }
+.batt-bar:nth-child(4) .handle { left: 35%; }
+.batt-bar:nth-child(5) .handle { left: 40%; }
+.batt-bar:nth-child(6) .handle { left: 45%; }
+.batt-bar:nth-child(7) .handle { left: 50%; }
+.batt-bar:nth-child(8) .handle { left: 55%; }
+.batt-bar:nth-child(9) .handle { left: 60%; }
+.batt-bar:nth-child(10) .handle { left: 65%; z-index: 999; }
+
+.end {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 1000px;
+  height: 500px;
+  margin-left: -22px;
+  margin-bottom: -125px;
+  padding-left: 20px;
+  background-color: red;
+  z-index: 99;
 }
