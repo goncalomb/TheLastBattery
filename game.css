@@ -3,23 +3,6 @@ body {
   font-size: 16px;
 }
 
-.test {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-}
-
-.test.t0 {
-  top: 0;
-  left: 0;
-}
-
-.test.t1 {
-  bottom: 0;
-  right: 0;
-}
-
 .batt-body {
   position: fixed;
   top: 50%;
