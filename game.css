@@ -1,3 +1,8 @@
+body {
+  font-family: 'Jura';
+  font-size: 16px;
+}
+
 .test {
   position: fixed;
   width: 20px;
@@ -102,6 +107,11 @@
   margin-left: -22px;
   margin-bottom: -125px;
   padding-left: 20px;
-  background-color: red;
+  background-color: firebrick;
+  color: white;
   z-index: 99;
+}
+
+.end h1 {
+  font-size: 5em;
 }
