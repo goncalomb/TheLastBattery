@@ -96,7 +96,27 @@ body {
 .batt-bar:nth-child(7) .handle { left: 50%; }
 .batt-bar:nth-child(8) .handle { left: 55%; }
 .batt-bar:nth-child(9) .handle { left: 60%; }
-.batt-bar:nth-child(10) .handle { left: 65%; z-index: 999; }
+.batt-bar:nth-child(10) .handle { left: 65%; }
+
+.start {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  padding: 20px;
+  background-color: forestgreen;
+  color: white;
+  transition-delay: 999999s;
+  pointer-events: none;
+}
+
+.start:hover {
+  transition-delay: 0s;
+  transform: translate(9999px, 9999px);
+}
 
 .end {
   display: inline-flex;
@@ -106,7 +126,7 @@ body {
   height: 500px;
   margin-left: -22px;
   margin-bottom: -125px;
-  padding-left: 20px;
+  padding: 20px;
   background-color: firebrick;
   color: white;
   z-index: 99;
@@ -114,4 +134,17 @@ body {
 
 .end h1 {
   font-size: 5em;
+}
+
+.button {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 5px;
+  background-color: goldenrod;
+  color: black;
+  pointer-events: auto;
+  border-radius: 5px;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
 }
