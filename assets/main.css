@@ -10,6 +10,11 @@ small {
   color: gray;
 }
 
+main a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
 iframe {
   border: 1px solid gray;
   width: 640px;
