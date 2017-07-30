@@ -5,11 +5,10 @@ body {
 
 .batt-body {
   position: fixed;
-  top: 50%;
+  top: calc(50% - 110px - 2px);
   left: 20px;
   width: 80px;
-  height: 250px;
-  margin-top: -125px;
+  height: 220px;
 
   border: 2px solid black;
   border-radius: 5px;
@@ -17,11 +16,10 @@ body {
 
 .batt-top {
   position: fixed;
-  top: 50%;
+  top: calc(50% - 110px - 2px - 10px - 2px);
   left: 40px;
   width: 40px;
   height: 10px;
-  margin-top: -137px;
 
   border: 2px solid black;
   border-top-left-radius: 5px;
@@ -30,22 +28,27 @@ body {
 
 .batt {
   position: fixed;
-  top: 50%;
+  top: calc(50% - 110px - 2px);
   left: 20px;
-  height: 250px;
-  margin-top: -125px;
+  height: 220px;
 
   display: flex;
   align-items: flex-end;
-  border: 2px solid rgba(0,0,0,0);
+  border: 2px solid transparent;
+}
+
+.batt-bars {
+  margin-bottom: -1px;
 }
 
 .batt-bar {
-  background-color: darkorange;
+  background-color: gold;
   width: 0;
   height: 0;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  border-radius: 2px;
   transition-delay: 3s;
+  pointer-events: none;
 }
 
 .batt-bar:hover {
@@ -57,29 +60,64 @@ body {
 
 .batt-bar .handle {
   position: fixed;
-  top: 50%;
+  transition-delay: 3s;
+  pointer-events: none;
+}
+
+.batt-bar .handle::before, .batt-bar .handle::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  content: '';
+  transition-delay: 3s;
+  pointer-events: auto;
+}
+
+.batt-bar .handle::before {
   width: 20px;
   height: 20px;
-
-  background-color: blue;
-  transition-delay: 3s;
+  transform: rotate3d(-1, 5, 1, 60deg);
+  background-color: gold;
 }
 
-.batt-bar .handle:hover {
+.batt-bar .handle::after {
+  width: 0;
+  height: 0;
+  transform: translate(0, 17px) rotate(15deg) scale(0.6, 1.2);
+  border-top: 20px solid gold;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.batt-bar .handle:hover::before, .batt-bar .handle:hover::after {
   transition-delay: 0s;
   height: 0;
+  border: none;
 }
 
-.batt-bar:nth-child(1) .handle { left: 20%; }
-.batt-bar:nth-child(2) .handle { left: 25%; }
-.batt-bar:nth-child(3) .handle { left: 30%; }
-.batt-bar:nth-child(4) .handle { left: 35%; }
-.batt-bar:nth-child(5) .handle { left: 40%; }
-.batt-bar:nth-child(6) .handle { left: 45%; }
-.batt-bar:nth-child(7) .handle { left: 50%; }
-.batt-bar:nth-child(8) .handle { left: 55%; }
-.batt-bar:nth-child(9) .handle { left: 60%; }
-.batt-bar:nth-child(10) .handle { left: 65%; }
+/*
+(function() {
+  var round = function(x) { return Math.floor(x*10)/10; };
+  var text = [];
+  for (var i = 1; i <= 10; i++) {
+    var t = round(Math.random()*100);
+    var l = round(Math.random()*100);
+    text.push('.batt-bar:nth-child(' + i + ') .handle { top: ' + t + '%; left: ' + l + '%; }');
+  }
+  console.log(text.join('\n'));
+})();
+*/
+
+.batt-bar:nth-child(1) .handle { top: 23.5%; left: 73.7%; }
+.batt-bar:nth-child(2) .handle { top: 89.7%; left: 47%; }
+.batt-bar:nth-child(3) .handle { top: 39.2%; left: 68.2%; }
+.batt-bar:nth-child(4) .handle { top: 14%; left: 4.9%; }
+.batt-bar:nth-child(5) .handle { top: 16%; left: 34.3%; }
+.batt-bar:nth-child(6) .handle { top: 55%; left: 25.1%; }
+.batt-bar:nth-child(7) .handle { top: 52.6%; left: 90.2%; }
+.batt-bar:nth-child(8) .handle { top: 81.1%; left: 84.1%; }
+.batt-bar:nth-child(9) .handle { top: 80.9%; left: 71.9%; }
+.batt-bar:nth-child(10) .handle { top: 68.2%; left: 58%; }
 
 .start {
   display: block;
@@ -105,18 +143,20 @@ body {
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
-  width: 1000px;
-  height: 500px;
+  width: 5000px;
+  height: 5000px;
   margin-left: -22px;
-  margin-bottom: -125px;
+  margin-bottom: calc(220px/2 - 5000px/2);
   padding: 20px;
-  background-color: firebrick;
+  background-color: darkslategray;
   color: white;
   z-index: 99;
 }
 
 .end h1 {
-  font-size: 5em;
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: .4em;
 }
 
 .button {
