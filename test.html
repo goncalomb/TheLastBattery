@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Last Battery (Test)</title>
+<style>
+.play-area {
+  width: 200px;;
+}
+
+.end {
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  margin: -50px;
+  background-color: green;
+  z-index: 1000;
+}
+
+.l {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  background-color: red;
+  transition-delay: 3s;
+  vertical-align: top;
+  z-index: 1;
+}
+
+.l:hover {
+  transition-delay: 0s;
+  margin-top: 1000px;
+}
+
+.l .b {
+  transition: 10s;
+  position: fixed;
+  height: 25px;
+  width: 25px;
+  top: 100px;
+  left: 100px;
+  background-color: white;
+  transition: 0s;
+  transition-delay: 3s;
+  z-index: 1;
+}
+
+.l:hover .b {
+  background-color: blue;
+  transition: 0s;
+  transition-delay: 0s;
+}
+</style>
+</head>
+<body>
+<div class="play-area">
+<div class="l">
+<div class="b"></div>
+</div>
+<div class="l"></div>
+<div class="l"></div>
+<div class="l"></div>
+<div class="l"></div>
+<div class="l"></div>
+<div class="l"></div>
+<div class="l"></div>
+<div class="end"></div>
+</div>
+</body>
+</html>
