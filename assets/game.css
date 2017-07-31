@@ -60,6 +60,7 @@ body {
 
 .batt-bar .handle {
   position: fixed;
+  transition-duration: .3s;
   transition-delay: 3s;
   pointer-events: none;
 }
@@ -87,6 +88,13 @@ body {
   border-top: 20px solid gold;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
+}
+
+.batt-bar .handle:hover {
+  transition-delay: 0s;
+  transition-duration: 0s;
+  transform: translate(-5px, -5px) scale(1.6);
+  opacity: 0;
 }
 
 .batt-bar .handle:hover::before, .batt-bar .handle:hover::after {
